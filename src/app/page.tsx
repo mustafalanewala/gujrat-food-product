@@ -1,101 +1,158 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { FaQuoteLeft } from "react-icons/fa";
+
+const products = [
+  {
+    name: "Yellow Diamond Makai Poha",
+    image: "/yellodiamondmakai.jpg",
+    description: "Premium quality yellow corn flakes",
+  },
+  {
+    name: "20-20 Makai Poha",
+    image: "/2020makai.jpg",
+    description: "Perfect balance of taste and nutrition",
+  },
+  {
+    name: "Rajdeep Makai Poha",
+    image: "/rajdeepmakai.jpg",
+    description: "Traditional flavor in every bite",
+  },
+  {
+    name: "Indian Gold Makai Poha",
+    image: "/indiagoldmakai.jpg",
+    description: "Delicious and healthy",
+  }
+];
+
+const testimonials = [
+  {
+    name: "Amit Sharma",
+    text: "The best Makai Poha I have ever tasted! The texture and flavor are simply amazing.",
+  },
+  {
+    name: "Priya Verma",
+    text: "Absolutely love the quality of these products. Highly recommended!",
+  },
+  {
+    name: "Rahul Mehta",
+    text: "Fresh, natural, and delicious! A staple in our kitchen now.",
+  },
+];
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const productSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
+    ],
+  };
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  const testimonialSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+  };
+
+  return (
+    <div className="flex flex-col custom-bg">
+      <Header />
+      <main>
+        {/* Hero Section */}
+        <section className="relative h-screen flex items-center justify-center">
+          <Image
+            src="/hero-image.jpg"
+            alt="Fresh Makai Poha grains"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div className="text-center text-white max-w-4xl px-4">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-5xl md:text-7xl font-bold mb-6"
+              >
+                Discover the Authentic Taste of Makai Poha
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-xl md:text-2xl mb-8"
+              >
+                Naturally Grown, Perfectly Processed, Purely Delicious
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <Link href="/about" className="bg-green-600 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-green-700 transition">Explore More</Link>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Product Section with Carousel */}
+        <section className="py-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl font-bold text-center text-amber-900 mb-12">Our Featured Products</h2>
+            <Slider {...productSettings} className="mx-auto w-full max-w-6xl">
+              {products.map((product, index) => (
+                <div key={index} className="px-4">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6">
+                    <Image src={product.image} alt={product.name} width={400} height={400} className="w-full h-[300px] object-cover rounded" />
+                    <h3 className="text-xl font-semibold text-amber-900 mt-4">{product.name}</h3>
+                    <p className="text-gray-600 mt-2">{product.description}</p>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+            <div className="flex justify-center mt-12">
+              <Link href="/products" className="bg-green-600 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-green-700 transition">Explore All Products</Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-24 bg-orange-200">
+          <div className="container mx-auto px-6">
+            <h2 className="text-4xl font-bold text-center text-amber-900 mb-12">What Our Customers Say</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <motion.div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+                  <FaQuoteLeft className="text-green-600 text-3xl mb-4" />
+                  <p className="text-amber-900 italic">"{testimonial.text}"</p>
+                  <p className="mt-4 text-right font-semibold text-black">- {testimonial.name}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
