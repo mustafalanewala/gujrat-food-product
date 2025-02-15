@@ -63,16 +63,6 @@ export default function Home() {
     ],
   };
 
-  const testimonialSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-  };
-
   return (
     <div className="flex flex-col custom-bg">
       <Header />
@@ -144,7 +134,7 @@ export default function Home() {
               {testimonials.map((testimonial, index) => (
                 <motion.div key={index} className="bg-white p-6 rounded-lg shadow-lg">
                   <FaQuoteLeft className="text-green-600 text-3xl mb-4" />
-                  <p className="text-amber-900 italic">"{testimonial.text}"</p>
+                  <p className="text-amber-900 italic">{testimonial.text}</p>
                   <p className="mt-4 text-right font-semibold text-black">- {testimonial.name}</p>
                 </motion.div>
               ))}
@@ -154,5 +144,5 @@ export default function Home() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }

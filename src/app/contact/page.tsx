@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa"
 
 export default function Contact() {
   return (

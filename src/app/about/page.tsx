@@ -58,7 +58,7 @@ export default function About() {
             </p>
             <p className="text-lg text-amber-800">
               We take pride in our commitment to quality, sustainability, and customer satisfaction. Our Makai Poha is
-              not just a product; it's a testament to our dedication to preserving the authentic taste of Gujarat.
+              not just a product; its a testament to our dedication to preserving the authentic taste of Gujarat.
             </p>
           </motion.div>
         </div>
