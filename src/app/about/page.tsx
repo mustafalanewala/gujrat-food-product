@@ -38,7 +38,7 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Image
-              src="https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg"
+              src="/about.jpg"
               alt="Dahod Factory"
               width={600}
               height={400}
@@ -110,12 +110,9 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 px-6">
           {[
-            "https://images.pexels.com/photos/257775/pexels-photo-257775.jpeg",
-            "https://images.pexels.com/photos/325520/pexels-photo-325520.jpeg",
-            "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg",
-            "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg",
-            "https://images.pexels.com/photos/325520/pexels-photo-325520.jpeg",
-            "https://images.pexels.com/photos/257775/pexels-photo-257775.jpeg"
+            "https://www.abhayboilers.com/images/makka-poha-plant-in-india.webp",
+            "https://www.shutterstock.com/image-photo/makka-poha-maize-makai-corn-600nw-2341582071.jpg",
+            "https://5.imimg.com/data5/ANDROID/Default/2020/11/PA/MB/OB/3006434/product-jpeg-500x500.jpg",
           ].map((src, index) => (
             <motion.div
               key={index}

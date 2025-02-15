@@ -7,6 +7,19 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.pexels.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.abhayboilers.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.shutterstock.com",
+      },
+      {
+        protocol: "https",
+        hostname: "5.imimg.com",
+      },
+
     ],
   },
 };

@@ -70,7 +70,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative h-screen flex items-center justify-center">
           <Image
-            src="/hero-image.jpg"
+            src="https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg?cs=srgb&dl=pexels-pixabay-247763.jpg&fm=jpg"
             alt="Fresh Makai Poha grains"
             layout="fill"
             objectFit="cover"
