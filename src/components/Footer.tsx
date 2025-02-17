@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { FaWhatsapp, FaInstagram, FaFacebook, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa"
+import { FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa"
 
 const Footer = () => {
   return (
@@ -11,15 +11,10 @@ const Footer = () => {
             <h3 className="text-2xl font-semibold mb-4">Gujrat Food Products</h3>
             <p className="mb-2">Bringing you the authentic taste of Makai Poha</p>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-2xl hover:text-makai-yellow transition duration-300">
+              <a href="https://wa.me/919909708678" className="text-2xl hover:text-makai-yellow transition duration-300">
                 <FaWhatsapp />
               </a>
-              <a href="#" className="text-2xl hover:text-makai-yellow transition duration-300">
-                <FaInstagram />
-              </a>
-              <a href="#" className="text-2xl hover:text-makai-yellow transition duration-300">
-                <FaFacebook />
-              </a>
+              <span className="text-xl text-amber-900">+91 919909708678</span>
             </div>
           </div>
           <div>
@@ -46,13 +41,18 @@ const Footer = () => {
             <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <FaMapMarkerAlt className="mr-2" /> Factory in Dahod, Gujarat, India
+                <FaMapMarkerAlt className="mr-2" />
+                <a href="https://www.google.com/maps?q=22°52'48.9%22N+74°17'40.3%22E" target="_blank" className="links">
+                  Plot No. 358, 359 MEGA GIDC, Kharedi, Dahod, Gujarat
+                </a>
               </li>
               <li className="flex items-center">
-                <FaPhone className="mr-2" /> +91 1234567890
+                <FaPhone className="mr-2" />
+                <a href="tel:+91919909708678" className="links">+91 919909708678</a>
               </li>
               <li className="flex items-center">
-                <FaEnvelope className="mr-2" /> info@gujratfoodproducts.com
+                <FaEnvelope className="mr-2" />
+                <a href="mailto:gujaratfoodproducts81@gmail.com" className="links">gujaratfoodproducts81@gmail.com</a>
               </li>
             </ul>
           </div>

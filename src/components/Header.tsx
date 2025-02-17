@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { FaHome, FaBoxOpen, FaInfoCircle, FaEnvelope, FaBars, FaTimes } from "react-icons/fa"
+import { FaHome, FaBoxOpen, FaInfoCircle, FaEnvelope, FaBars, FaTimes, FaWhatsapp } from "react-icons/fa"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,11 +16,17 @@ const Header = () => {
           <Link href="/" className="text-2xl font-bold text-black">
             Gujrat Food Products
           </Link>
-          <nav className="hidden md:flex space-x-8">
-            <NavLink href="/" icon={<FaHome />} text="Home" />
-            <NavLink href="/products" icon={<FaBoxOpen />} text="Products" />
-            <NavLink href="/about" icon={<FaInfoCircle />} text="About Us" />
-            <NavLink href="/contact" icon={<FaEnvelope />} text="Contact" />
+          <nav className="hidden md:flex flex-col items-end space-y-2">
+            <Link href="https://wa.me/919909708678" className="flex items-center space-x-2 text-black font-medium hover:text-green-500">
+              <FaWhatsapp className="text-green-500" size={24} />
+              <span>+91 9909708678</span>
+            </Link>
+            <div className="flex space-x-8">
+              <NavLink href="/" icon={<FaHome />} text="Home" />
+              <NavLink href="/products" icon={<FaBoxOpen />} text="Products" />
+              <NavLink href="/about" icon={<FaInfoCircle />} text="About Us" />
+              <NavLink href="/contact" icon={<FaEnvelope />} text="Contact" />
+            </div>
           </nav>
           <button className="md:hidden text-black" onClick={toggleMenu}>
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -34,6 +40,10 @@ const Header = () => {
             <NavLink href="/products" icon={<FaBoxOpen />} text="Products" mobile onClick={toggleMenu} />
             <NavLink href="/about" icon={<FaInfoCircle />} text="About Us" mobile onClick={toggleMenu} />
             <NavLink href="/contact" icon={<FaEnvelope />} text="Contact" mobile onClick={toggleMenu} />
+            <Link href="https://wa.me/919909708678" className="flex items-center space-x-2 text-black font-medium hover:text-green-500">
+              <FaWhatsapp className="text-green-500" size={20} />
+              <span>+91 9909708678</span>
+            </Link>
           </div>
         </nav>
       )}
