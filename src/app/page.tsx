@@ -13,23 +13,23 @@ import { FaQuoteLeft } from "react-icons/fa";
 const products = [
   {
     name: "Yellow Diamond Makai Poha",
-    image: "/yellodiamondmakai.jpg",
+    image: "/4.png",
     description: "Premium quality yellow corn flakes",
   },
   {
     name: "20-20 Makai Poha",
-    image: "/2020makai.jpg",
+    image: "/1.png",
     description: "Perfect balance of taste and nutrition",
   },
   {
     name: "Rajdeep Makai Poha",
-    image: "/rajdeepmakai.jpg",
+    image: "/2.png",
     description: "Traditional flavor in every bite",
   },
   {
     name: "Indian Gold Makai Poha",
-    image: "/indiagoldmakai.jpg",
-    description: "Delicious and healthy",
+    image: "/3.png",
+    description: "Delicious and healthy corn flakes",
   }
 ];
 
@@ -113,7 +113,7 @@ export default function Home() {
               {products.map((product, index) => (
                 <div key={index} className="px-4">
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6">
-                    <Image src={product.image} alt={product.name} width={400} height={400} className="w-full h-[300px] object-cover rounded" />
+                    <Image src={product.image} alt={product.name} width={900} height={400} className="w-full h-[350px] object-cover rounded" />
                     <h3 className="text-xl font-semibold text-amber-900 mt-4">{product.name}</h3>
                     <p className="text-gray-600 mt-2">{product.description}</p>
                   </div>

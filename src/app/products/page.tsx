@@ -9,37 +9,37 @@ import { FaStar, FaLeaf, FaPhoneAlt, FaCheckCircle } from "react-icons/fa"
 const products = [
   {
     name: "Yellow Diamond Makai Poha",
-    image: "/yellodiamondmakai.jpg",
+    image: "/4.png",
     description: "Premium quality yellow corn flakes",
     icon: FaStar
   },
   {
     name: "20-20 Makai Poha",
-    image: "/2020makai.jpg",
+    image: "/1.png",
     description: "Perfect balance of taste and nutrition",
     icon: FaStar
   },
   {
     name: "Rajdeep Makai Poha",
-    image: "/rajdeepmakai.jpg",
+    image: "/2.png",
     description: "Traditional flavor in every bite",
     icon: FaStar
   },
   {
     name: "Indian Gold Makai Poha",
-    image: "/indiagoldmakai.jpg",
+    image: "/3.png",
     description: "Delicious and healthy",
     icon: FaStar
   },
   {
     name: "Gujrat King Makai Bhardo",
-    image: "/gkbhardo1.jpg",
+    image: "/5.png",
     description: "Nutritious and wholesome feed for cows",
     icon: FaLeaf
   },
   {
     name: "Gujrat King Makai Bhardo",
-    image: "/gkbhardo2.jpg",
+    image: "/6.png",
     description: "Nutritious and wholesome feed for cows",
     icon: FaLeaf
   }
@@ -66,21 +66,21 @@ export default function Products() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
             >
               <Image
                 src={product.image}
                 alt={product.name}
                 width={300}
                 height={200}
-                className="w-full h-[450px] object-fit"
+                className="w-full h-[350px] object-fit"
               />
-              <div className="p-6">
+              <div className="px-6 py-3">
                 <h2 className="text-xl font-semibold mb-2 text-amber-900 flex items-center">
                   <product.icon className="mr-2 text-makai-yellow" />
                   {product.name}
                 </h2>
-                <p className="text-gray-700 mb-4">{product.description}</p>
+                <p className="text-gray-700 mb-2">{product.description}</p>
                 <div className="flex items-center mb-4">
                   <FaLeaf className="text-green-600 mr-2" />
                   <span className="text-sm text-green-600">100% Natural</span>

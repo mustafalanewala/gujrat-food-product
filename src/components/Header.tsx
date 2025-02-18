@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { FaHome, FaBoxOpen, FaInfoCircle, FaEnvelope, FaBars, FaTimes, FaWhatsapp } from "react-icons/fa"
 
 const Header = () => {
@@ -13,8 +14,8 @@ const Header = () => {
     <header className="bg-white/30 backdrop-blur-lg sticky top-0 w-full z-50 shadow-lg text-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link href="/" className="text-2xl font-bold text-black">
-            Gujrat Food Products
+          <Link href="/">
+            <Image src="/logo.jpg" alt="Logo" width={75} height={50} className="rounded-lg" />
           </Link>
           <nav className="hidden md:flex flex-col items-end space-y-2">
             <Link href="https://wa.me/919909708678" className="flex items-center space-x-2 text-black font-medium hover:text-green-500">

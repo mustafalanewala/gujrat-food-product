@@ -13,8 +13,8 @@ const Footer = () => {
             <div className="flex space-x-4 mt-4">
               <a href="https://wa.me/919909708678" className="text-2xl hover:text-makai-yellow transition duration-300">
                 <FaWhatsapp />
+                <span className="text-xl text-amber-900">+91 9909708678</span>
               </a>
-              <span className="text-xl text-amber-900">+91 919909708678</span>
             </div>
           </div>
           <div>
@@ -48,7 +48,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <FaPhone className="mr-2" />
-                <a href="tel:+91919909708678" className="links">+91 919909708678</a>
+                <a href="tel:+919909708678" className="links">+91 9909708678</a>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="mr-2" />
