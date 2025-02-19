@@ -2,7 +2,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import type React from "react"
 import { Lora } from "next/font/google"
-import { FaWhatsapp } from "react-icons/fa" // Import the WhatsApp icon
+import { FaWhatsapp } from "react-icons/fa"
 
 const lora = Lora({
   weight: ["400", "500", "600", "700"],

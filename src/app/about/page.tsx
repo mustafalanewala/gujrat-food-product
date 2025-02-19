@@ -30,7 +30,7 @@ export default function About() {
         </motion.div> */}
 
         {/* Company Info */}
-        <h1 className="text-4xl font-bold text-amber-900 text-center px-6">About Gujrat Food Products</h1>
+        <h1 className="text-4xl font-bold text-amber-900 text-center px-6">About Gujarat Food Products</h1>
         <div className="grid md:grid-cols-2 gap-8 items-center my-12 px-6">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -52,7 +52,7 @@ export default function About() {
           >
             <h2 className="text-2xl font-semibold mb-4 text-amber-900">Our Story</h2>
             <p className="text-lg mb-4 text-amber-800">
-              Gujrat Food Products has been a pioneer in producing high-quality Makai Poha since its inception. Our
+              Gujarat Food Products has been a pioneer in producing high-quality Makai Poha since its inception. Our
               state-of-the-art factory in Dahod, Gujarat, combines traditional wisdom with modern technology to bring
               you the finest corn products.
             </p>
