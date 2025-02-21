@@ -11,7 +11,46 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  title: "Gujrat Food Products",
+  title: "Gujarat Food Products",
+  icons: [
+    {
+      rel: "icon",
+      type: "image/jpg",
+      sizes: "32x32",
+      url: "/logo.jpg",
+    },
+    {
+      rel: "icon",
+      type: "image/jpg",
+      sizes: "16x16",
+      url: "/logo.jpg",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      url: "/logo.jpg",
+    },
+  ],
+  manifest: "/site.webmanifest",
+  keywords: "makai poha, corn flakes, gujarat food products, indian snacks, healthy breakfast, traditional food, dahod gujarat, best makai poha manufacturer, organic corn flakes, healthy indian breakfast, natural food products, premium quality snacks, wholesale corn products, authentic gujarati food",
+  authors: [{ name: "Gujarat Food Products" }],
+  creator: "Gujarat Food Products",
+  publisher: "Gujarat Food Products",
+  formatDetection: {
+    telephone: true,
+    date: true,
+    email: true,
+    address: true,
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   description:
     "Discover the best quality Makai Poha from Gujrat Food Products. Naturally grown, perfectly processed corn products and cow feed.",
 }
