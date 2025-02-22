@@ -53,6 +53,9 @@ export const metadata: Metadata = {
   },
   description:
     "Discover the best quality Makai Poha from Gujrat Food Products. Naturally grown, perfectly processed corn products and cow feed.",
+  verification: {
+    google: 'Q5vZuBDuo5t9xpMsI6JY0OmWXyDsy-X6scMDCTMolfM',
+  },
 }
 
 export default function RootLayout({
