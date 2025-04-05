@@ -5,13 +5,13 @@ import { FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa"
 const Footer = () => {
   return (
     <footer className="bg-makai-brown text-amber-900 py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <h3 className="text-2xl font-semibold mb-4">Gujarat Food Products</h3>
             <p className="mb-2">Bringing you the authentic taste of Makai Poha</p>
             <div className="flex space-x-4 mt-4">
-              <a href="https://wa.me/919909708678" className="text-2xl hover:text-makai-yellow transition duration-300">
+              <a href="https://wa.me/919909708678" className="flex gap-4 text-2xl hover:text-makai-yellow transition duration-300">
                 <FaWhatsapp />
                 <span className="text-xl text-amber-900">+91 9909708678</span>
               </a>
@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
         <div className="mt-6 pt-6 border-t border-amber-900/30 text-center">
           <p>&copy; {new Date().getFullYear()} Gujarat Food Products. All rights reserved.</p>
-          <p>Developed By Mustafa Lanewala</p>
+          <p>Developed By <Link href="https://mxnoor.in">MxNoor Solutions</Link></p>
         </div>
       </div>
     </footer>

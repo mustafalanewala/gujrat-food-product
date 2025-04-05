@@ -29,14 +29,7 @@ export default function Contact() {
           >
             <h2 className="text-3xl font-semibold mb-6 text-amber-900">Our Location</h2>
             <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14881410.901139613!2d65.07848075000003!3d16.662856334145403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39611ea72a0017c5%3A0xfe8dae52b25f01f2!2sGujarat%20Food!5e1!3m2!1sen!2sin!4v1739765146709!5m2!1sen!2sin&zoom=100"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-              />
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d919.0543566066515!2d74.27503814716208!3d22.868425196735355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39611d8e7418d57b%3A0xfb2faeb0c45641a1!2sGujarat%20Food%20Products!5e0!3m2!1sen!2sin!4v1743864915642!5m2!1sen!2sin" width="600" height="450" loading="lazy"></iframe>
             </div>
           </motion.div>
 
