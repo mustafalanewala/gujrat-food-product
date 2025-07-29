@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import { FaStar, FaLeaf, FaPhoneAlt, FaCheckCircle } from "react-icons/fa"
+import Link from "next/link"
 
 const products = [
   {
@@ -85,9 +86,11 @@ export default function Products() {
                   <FaLeaf className="text-green-600 mr-2" />
                   <span className="text-sm text-green-600">100% Natural</span>
                 </div>
+                <Link href="https://wa.me/919909708678">
                 <button className="w-full bg-green-600 text-white py-2 rounded-lg flex items-center justify-center hover:bg-green-700 transition duration-300">
                   <FaPhoneAlt className="mr-2" /> Contact Us
                 </button>
+                </Link>
               </div>
             </motion.div>
           ))}
