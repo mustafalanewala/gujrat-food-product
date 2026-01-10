@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
         <div className="mt-6 pt-6 border-t border-amber-900/30 text-center">
           <p>&copy; {new Date().getFullYear()} Gujarat Food Products. All rights reserved.</p>
-          <p>Developed By <Link href="https://mxnoor.in">MxNoor Solutions</Link></p>
+          <p>Developed By <Link href="https://www.mxsolution.in">Mx Solution</Link></p>
         </div>
       </div>
     </footer>
