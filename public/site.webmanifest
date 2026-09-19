@@ -1,0 +1,8 @@
+{
+  "name": "Gujarat Food Products",
+  "short_name": "Gujarat Food",
+  "icons": [{ "src": "/logo.jpg", "sizes": "192x192", "type": "image/jpeg" }],
+  "theme_color": "#F2C12E",
+  "background_color": "#FBF7EC",
+  "display": "standalone"
+}

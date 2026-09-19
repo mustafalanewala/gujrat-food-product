@@ -1,27 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ['ui-avatars.com'],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.pexels.com",
-      },
-      {
-        protocol: "https",
-        hostname: "www.abhayboilers.com",
-      },
-      {
-        protocol: "https",
-        hostname: "www.shutterstock.com",
-      },
-      {
-        protocol: "https",
-        hostname: "5.imimg.com",
-      },
+import type { NextConfig } from "next"
 
-    ],
-  },
-};
+/** All imagery is local (public/photos), so no remote hosts are allowed. */
+const nextConfig: NextConfig = {}
 
-module.exports = nextConfig;
+export default nextConfig

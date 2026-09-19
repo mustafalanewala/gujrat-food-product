@@ -1,25 +1,155 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/**
+ * Tokens are sampled from the company's own printed sacks (public/1.png-6.png):
+ * a saturated maize-yellow label field, vermilion display lettering, husk-green
+ * maize illustration and the ultramarine of the Gujarat King cattle-feed bag.
+ */
+@theme {
+  --color-maize: #f2c12e;
+  --color-maize-deep: #d9a310;
+  --color-maize-pale: #fdefc2;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-vermilion: #ce2317;
+  --color-vermilion-deep: #9e1810;
+
+  --color-husk: #1b7a3e;
+  --color-husk-deep: #125b2d;
+
+  --color-indigo: #16295e;
+  --color-indigo-deep: #0e1b40;
+
+  --color-sack: #fbf7ec;
+  --color-sack-shade: #f1e9d6;
+
+  --color-ink: #241b0c;
+  --color-ink-soft: #5a4b33;
+
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-body: "Newsreader", Georgia, serif;
+  --font-gu: "Noto Sans Gujarati", sans-serif;
+
+  /* Flat overprint offsets instead of soft grey blur. */
+  --shadow-print: 7px 7px 0 0 #241b0c;
+  --shadow-print-sm: 4px 4px 0 0 #241b0c;
+
+  --container-measure: 63ch;
+
+  --animate-label-in: label-in 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+
+  @keyframes label-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 18px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  /*
+   * Tailwind v4 defaults an unqualified border to currentColor. This design
+   * rules everything in ink, so make that the default rather than repeating it.
+   */
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-ink);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-sack);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-variation-settings: "wdth" 112;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.04;
+    text-wrap: balance;
+    color: var(--color-ink);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Keyboard focus stays visible everywhere, on light and dark grounds. */
+  :focus-visible {
+    outline: 3px solid var(--color-vermilion);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .on-dark :focus-visible {
+    outline-color: var(--color-maize);
+  }
 }
 
-.custom-bg {
-  background-color: #ffedd8;
+@layer components {
+  /* Woven polypropylene weave, barely there. */
+  .weave {
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(36, 27, 12, 0.03) 0 1px,
+        transparent 1px 9px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        rgba(36, 27, 12, 0.03) 0 1px,
+        transparent 1px 9px
+      );
+  }
+
+  .gu {
+    font-family: var(--font-gu);
+    font-weight: 500;
+  }
+
+  .links {
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s, color 0.2s;
+  }
+
+  .links:hover {
+    text-decoration-color: currentColor;
+  }
+
+  /* Display numerals in the process sequence. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

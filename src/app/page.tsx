@@ -1,148 +1,283 @@
-"use client";
+import Image from "next/image"
+import Link from "next/link"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import { FaWhatsapp, FaArrowRight } from "react-icons/fa"
+import { site, waLink, products, process, quality, photos } from "../lib/site"
 
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import { FaQuoteLeft } from "react-icons/fa";
-
-const products = [
-  {
-    name: "Yellow Diamond Makai Poha",
-    image: "/4.png",
-    description: "Premium quality yellow corn flakes",
-  },
-  {
-    name: "20-20 Makai Poha",
-    image: "/1.png",
-    description: "Perfect balance of taste and nutrition",
-  },
-  {
-    name: "Rajdeep Makai Poha",
-    image: "/2.png",
-    description: "Traditional flavor in every bite",
-  },
-  {
-    name: "Indian Gold Makai Poha",
-    image: "/3.png",
-    description: "Delicious and healthy corn flakes",
-  }
-];
+const facts = [
+  { k: "Mill", v: "Dahod, Gujarat" },
+  { k: "Poha labels", v: "Four" },
+  { k: "Also packs", v: "Cattle feed" },
+]
 
 const testimonials = [
   {
     name: "Amit Sharma",
-    text: "The best Makai Poha I have ever tasted! The texture and flavor are simply amazing.",
+    text: "The best makai poha I have tasted. The texture and flavour are consistent bag to bag.",
   },
   {
     name: "Priya Verma",
-    text: "Absolutely love the quality of these products. Highly recommended!",
+    text: "We have been ordering for two years. The grade does not drift between seasons.",
   },
   {
     name: "Rahul Mehta",
-    text: "Fresh, natural, and delicious! A staple in our kitchen now.",
+    text: "Fresh, clean and well packed. It has become a staple in our kitchen.",
   },
-];
+]
+
+const quoteMessage = "Hello Gujarat Food Products, I would like a quote."
 
 export default function Home() {
-  const productSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
-    ],
-  };
-
   return (
-    <div className="flex flex-col custom-bg">
+    <>
       <Header />
-      <main>
-        {/* Hero Section */}
-        <section className="relative h-screen flex items-center justify-center">
-          <Image
-            src="https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg?cs=srgb&dl=pexels-pixabay-247763.jpg&fm=jpg"
-            alt="Fresh Makai Poha grains"
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="text-center text-white max-w-4xl px-4">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-5xl md:text-7xl font-bold mb-6"
-              >
-                Discover the Authentic Taste of Makai Poha
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl md:text-2xl mb-8"
-              >
-                Naturally Grown, Perfectly Processed, Purely Delicious
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <Link href="/about" className="bg-green-600 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-green-700 transition">Explore More</Link>
-              </motion.div>
-            </div>
-          </div>
-        </section>
 
-        {/* Product Section with Carousel */}
-        <section className="py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-center text-amber-900 mb-12">Our Featured Products</h2>
-            <Slider {...productSettings} className="mx-auto w-full max-w-6xl">
-              {products.map((product, index) => (
-                <div key={index} className="px-4">
-                  <div className="bg-white rounded-lg shadow-lg overflow-hidden text-center p-6">
-                    <Image src={product.image} alt={product.name} width={900} height={400} className="w-full h-[350px] object-cover rounded" />
-                    <h3 className="text-xl font-semibold text-amber-900 mt-4">{product.name}</h3>
-                    <p className="text-gray-600 mt-2">{product.description}</p>
-                  </div>
+      <main id="main">
+        {/* Hero: a printed label pasted against the grain it is made from. */}
+        <section className="border-b-4 border-ink bg-ink">
+          <div className="grid lg:grid-cols-[minmax(0,44fr)_minmax(0,56fr)]">
+            <div className="order-2 flex items-center bg-maize px-5 py-14 sm:px-10 lg:order-1 lg:py-24">
+              <div className="w-full">
+                <p className="gu animate-label-in text-lg text-vermilion-deep">
+                  મકાઈ પૌંઆ
+                </p>
+                <h1
+                  className="animate-label-in mt-3 text-[clamp(2.6rem,6vw,4.4rem)]"
+                  style={{ animationDelay: "90ms" }}
+                >
+                  Makai poha,
+                  <br />
+                  milled in Dahod
+                </h1>
+                <p
+                  className="animate-label-in mt-6 max-w-measure text-lg leading-relaxed text-ink/85"
+                  style={{ animationDelay: "180ms" }}
+                >
+                  Maize comes in off the fields around Dahod. It is boiled,
+                  rolled flat, dried in air and packed into printed sacks under
+                  four labels, at the same grade season after season.
+                </p>
+                <div
+                  className="animate-label-in mt-9 flex flex-wrap gap-3"
+                  style={{ animationDelay: "270ms" }}
+                >
+                  <Link
+                    href="/products"
+                    className="inline-flex items-center gap-2.5 border-2 border-ink bg-vermilion px-6 py-3.5 font-display text-base font-bold text-white shadow-print-sm transition-transform hover:-translate-y-0.5"
+                  >
+                    See the range
+                    <FaArrowRight className="text-sm" aria-hidden />
+                  </Link>
+                  <a
+                    href={waLink(quoteMessage)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 border-2 border-ink bg-sack px-6 py-3.5 font-display text-base font-bold text-ink shadow-print-sm transition-transform hover:-translate-y-0.5"
+                  >
+                    <FaWhatsapp className="text-husk" aria-hidden />
+                    Ask for a quote
+                  </a>
                 </div>
-              ))}
-            </Slider>
-            <div className="flex justify-center mt-12">
-              <Link href="/products" className="bg-green-600 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-green-700 transition">Explore All Products</Link>
+              </div>
+            </div>
+
+            <div className="relative order-1 min-h-[46vh] lg:order-2 lg:min-h-[78vh]">
+              <Image
+                src={photos.hero.src}
+                alt={photos.hero.alt}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 56vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-24 bg-orange-200">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold text-center text-amber-900 mb-12">What Our Customers Say</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <motion.div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-                  <FaQuoteLeft className="text-green-600 text-3xl mb-4" />
-                  <p className="text-amber-900 italic">{testimonial.text}</p>
-                  <p className="mt-4 text-right font-semibold text-black">- {testimonial.name}</p>
-                </motion.div>
+        {/* The hard facts, in ruled cells rather than a run-on line. */}
+        <section className="on-dark border-b-4 border-ink bg-indigo">
+          <dl className="mx-auto grid max-w-[1200px] grid-cols-1 gap-px bg-sack/25 sm:grid-cols-3">
+            {facts.map((f) => (
+              <div key={f.k} className="bg-indigo px-5 py-5 lg:px-8">
+                <dt className="font-display text-xs font-bold text-maize">{f.k}</dt>
+                <dd className="tabular mt-1 font-display text-lg font-semibold text-sack">
+                  {f.v}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        {/* Range */}
+        <section className="mx-auto max-w-[1200px] px-5 py-20 lg:px-8 lg:py-28">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <h2 className="text-[clamp(2rem,4vw,3rem)]">The poha labels</h2>
+              <p className="mt-3 max-w-measure text-lg text-ink-soft">
+                Four brands out of one mill. Same maize, same rollers, different
+                sack.
+              </p>
+            </div>
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-2 border-b-2 border-vermilion pb-1 font-display text-base font-bold text-vermilion transition-colors hover:border-ink hover:text-ink"
+            >
+              All products, including feed
+              <FaArrowRight className="text-xs" aria-hidden />
+            </Link>
+          </div>
+
+          <ul className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+            {products
+              .filter((p) => p.kind === "poha")
+              .map((p) => (
+                <li
+                  key={p.brand}
+                  className="border-2 border-ink bg-white transition-transform hover:-translate-y-1 hover:shadow-print-sm"
+                >
+                  <div className="border-b-2 border-ink bg-white">
+                    <Image
+                      src={p.image}
+                      alt={p.brand + " " + p.line + " sack"}
+                      width={640}
+                      height={560}
+                      className="h-64 w-full object-contain p-3"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-display text-xl font-extrabold">{p.brand}</h3>
+                    <p className="mt-0.5 font-display text-sm font-semibold text-vermilion">
+                      {p.line}
+                      <span className="gu ml-2 font-normal text-ink-soft">{p.gu}</span>
+                    </p>
+                    <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
+                      {p.note}
+                    </p>
+                  </div>
+                </li>
               ))}
+          </ul>
+        </section>
+
+        {/* The mill run: a real sequence, so it is numbered. */}
+        <section className="on-dark border-y-4 border-ink bg-indigo-deep">
+          <div className="mx-auto max-w-[1200px] px-5 py-20 lg:px-8 lg:py-28">
+            <h2 className="text-maize">Six steps, start to sack</h2>
+            <p className="mt-3 max-w-measure text-lg text-sack/75">
+              Nothing exotic happens here. What matters is that it happens the
+              same way every time.
+            </p>
+
+            <ol className="mt-14 grid gap-px bg-sack/20 sm:grid-cols-2 lg:grid-cols-3">
+              {process.map((step, i) => (
+                <li key={step.title} className="bg-indigo-deep p-7">
+                  <div className="flex items-baseline gap-4">
+                    <span className="tabular font-display text-4xl font-extrabold text-maize/45">
+                      {i + 1}
+                    </span>
+                    <h3 className="font-display text-xl font-extrabold text-sack">
+                      {step.title}
+                    </h3>
+                  </div>
+                  <p className="mt-3 text-[15px] leading-relaxed text-sack/75">
+                    {step.detail}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* What is printed on every bag */}
+        <section className="mx-auto max-w-[1200px] px-5 py-20 lg:px-8 lg:py-28">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+            <div className="relative aspect-[5/4] border-2 border-ink">
+              <Image
+                src={photos.drying.src}
+                alt={photos.drying.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="text-[clamp(2rem,4vw,3rem)]">
+                Our commitment to quality
+              </h2>
+              <p className="mt-3 max-w-measure text-lg text-ink-soft">
+                The same checks run on every batch.
+              </p>
+              <ul className="mt-9 divide-y-2 divide-ink/15 border-y-2 border-ink">
+                {quality.map((q) => (
+                  <li
+                    key={q}
+                    className="flex gap-4 py-5 text-lg leading-relaxed text-ink"
+                  >
+                    <span
+                      className="mt-2.5 h-2.5 w-2.5 shrink-0 bg-vermilion"
+                      aria-hidden
+                    />
+                    {q}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Buyers, kept quiet */}
+        <section className="border-y-2 border-ink bg-sack-shade">
+          <div className="mx-auto max-w-[1200px] px-5 py-20 lg:px-8">
+            <h2 className="text-[clamp(1.75rem,3vw,2.25rem)]">
+              From the people who order it
+            </h2>
+            <ul className="mt-10 grid gap-10 md:grid-cols-3">
+              {testimonials.map((t) => (
+                <li key={t.name} className="border-t-2 border-ink pt-6">
+                  <p className="text-lg italic leading-relaxed text-ink">{t.text}</p>
+                  <p className="mt-4 font-display text-sm font-bold not-italic text-ink-soft">
+                    {t.name}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Close */}
+        <section className="border-b-4 border-ink bg-maize">
+          <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-8 px-5 py-16 lg:px-8">
+            <div>
+              <h2 className="text-[clamp(1.9rem,3.6vw,2.75rem)]">
+                Tell us the grade and the quantity
+              </h2>
+              <p className="mt-3 max-w-measure text-lg text-ink/80">
+                Most orders start as a WhatsApp message. We will come back with a
+                price and a packing date.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={waLink(quoteMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 border-2 border-ink bg-husk px-6 py-3.5 font-display text-base font-bold text-white shadow-print-sm transition-transform hover:-translate-y-0.5"
+              >
+                <FaWhatsapp aria-hidden /> WhatsApp
+              </a>
+              <a
+                href={site.phoneHref}
+                className="inline-flex items-center gap-2.5 border-2 border-ink bg-sack px-6 py-3.5 font-display text-base font-bold text-ink shadow-print-sm transition-transform hover:-translate-y-0.5"
+              >
+                {site.phone}
+              </a>
             </div>
           </div>
         </section>
       </main>
+
       <Footer />
-    </div>
+    </>
   )
 }
